@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.username">adminRTS</property>
+		<property name="hibernate.connection.password">jta1712</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@jta1712.cyxofh0hm1of.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+
+		<mapping class="com.revature.hibernate.model.Location"></mapping>
+		<mapping class="com.revature.hibernate.model.Building"></mapping>
+		<mapping class="com.revature.hibernate.model.Room"></mapping>
+		<mapping class="com.revature.hibernate.model.Curriculum"></mapping>
+		<mapping class="com.revature.hibernate.model.Focus"></mapping>
+		<mapping class="com.revature.hibernate.model.Skill"></mapping>
+		<mapping class="com.revature.hibernate.model.Trainer"></mapping>
+		<mapping class="com.revature.hibernate.model.Batch"></mapping>
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" parallel="false">
+	 <groups>
+	 <run>
+	 	<include name="VP"/>
+	 </run>
+	  <!--<run>
+	  	<include name="Trainer"/>
+	  </run>-->
+	</groups>
+  <test name="Test">
+    <classes>
+      <!--<class name="com.revature.tester.TrainerTest"/>-->
+      <class name="com.revature.tester.CurriculumTester"/>
+      <!--<class name="com.revature.tester.test.ProfileTest"/>-->
+      <!--<class name="com.revature.tester.test.SettingTester>-->
+      <!--<class name="com.revature.tester.test.SettingTester>-->
+      <!--<class name="com.revature.tester.test.SettingTester>-->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

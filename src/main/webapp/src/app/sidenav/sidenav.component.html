@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-1">
+      <div class="sidenav">
+        <h3><a routerLink="/overview">Overview</a></h3>
+        <h3><a routerLink="/metrics-view">Metrics</a></h3>
+        <h3>Test Groups</h3>
+        <ul class="nav nav-pills nav-stacked">
+          <li *ngFor="let group of groups">
+            <a routerLink="/groups/{{group}}">{{group}}</a>
+          </li>
+        </ul>
+        <h3>All Tests</h3>
+        <ul class="nav nav-pills nav-stacked">
+          <li *ngFor="let test of allTests" [ngClass]="{success: 'bg-success',skipped: 'bg-warning',failure: 'bg-danger'}[test.status]">
+            <a routerLink="/tests/{{test.id}}">{{test.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

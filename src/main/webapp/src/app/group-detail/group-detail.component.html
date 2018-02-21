@@ -1,0 +1,10 @@
+<h3>{{group.name}}</h3>
+
+<div>
+  <button class="btn btn-info" (click)="runGroup()" [disabled]="btnIsDisabled">Run this group of tests</button>
+  <ul>
+    <li>
+      Description: {{group.description}}
+    </li>
+  </ul>
+</div>

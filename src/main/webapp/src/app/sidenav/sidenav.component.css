@@ -1,0 +1,8 @@
+.sidenav {
+  display: block;
+  position: fixed;
+  left: 25px;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-right: 25px;
+}

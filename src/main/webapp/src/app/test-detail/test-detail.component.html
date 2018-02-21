@@ -1,0 +1,25 @@
+<h3>{{test.name}}</h3>
+
+<div>
+  <ul>
+    <li>
+      ID: #{{test.id}}
+    </li>
+    <li>
+      Status: {{test.status}}
+    </li>
+    <li>
+      In class: {{test.belongsToClass}}
+    </li>
+    <li *ngIf="test.status=='failure'">
+      Exception: {{test.exceptionThrown.message}}
+      <br>
+      <strong>Stack trace:</strong>
+    </li>
+    <div *ngIf="test.status=='failure'">
+      <div *ngFor="let e of test.exceptionThrown.stackTrace" class="text-danger">
+        at method <strong>{{e.methodName}}:{{e.lineNumber}}</strong> in class {{e.className}} in file {{e.fileName}}
+      </div>
+    </div>
+  </ul>
+</div>

@@ -1,0 +1,22 @@
+{
+  "ecmaVersion": 6,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "jasmine": {
+      
+    },
+    "protractor": {
+      
+    },
+    "bootstrap": {
+      
+    }
+  },
+  "libs": [
+    "ecma5",
+    "browser",
+    "jquery"
+  ]
+}
