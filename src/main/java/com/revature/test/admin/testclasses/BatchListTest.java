@@ -12,8 +12,7 @@ public class BatchListTest extends AdminSuite {
 
 	static int testNumber = 1;
 	
-	//@BeforeTest
-	@Test(priority = 0)
+	@BeforeTest
 	public void NavigateToBatchListTab() {
 		System.out.println("============ Initializing Batch List Tests ===============");
 		System.out.println("");

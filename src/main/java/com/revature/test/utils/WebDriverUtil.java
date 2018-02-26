@@ -9,11 +9,11 @@ public class WebDriverUtil {
 
 	private static WebDriver chromeDriver = null;
 	
-	private WebDriverUtil() {
+	public WebDriverUtil() {
 		
 	}
 	
-	public static WebDriver getChromeDriver() {
+	public WebDriver getChromeDriver() {
 		if (chromeDriver == null) {
 			//doesnt work, for some reason i have to put driver in \sts-3.9.1-RELEASE\src\main\resources
 			//some path like that

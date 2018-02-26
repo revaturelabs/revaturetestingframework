@@ -19,7 +19,7 @@ public class BatchListCukes {
 	public static boolean the_Batch_List_Tab_is_clicked(WebDriver wd) throws Throwable {
 
 		try {
-			Thread.sleep(2500);
+			Thread.sleep(1500);
 			BatchListTab.clickBatchListTab(wd).click();
 			if (BatchListTab.getCurrentURL(wd).equals(TestConfig.getBaseURL() + "/batch-listing")) {
 				return true;

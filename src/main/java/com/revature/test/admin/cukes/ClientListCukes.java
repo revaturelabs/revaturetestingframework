@@ -49,8 +49,8 @@ public class ClientListCukes extends AdminSuite {
 	@Given("^Client List panel loads$")
 	public static boolean client_list_panel_loads(WebDriver d) {
 		try {
-			firstClient = ClientListTab.getClientNameFromList(wd, 1).getText();
-			secondClient = ClientListTab.getClientNameFromList(wd, 2).getText();
+			firstClient = ClientListTab.getClientNameFromList(d, 1).getText();
+			secondClient = ClientListTab.getClientNameFromList(d, 2).getText();
 			System.out.println("Current client: " + currentClient);
 			System.out.println("First client: " + firstClient);
 			System.out.println("Second client: " + secondClient);
@@ -101,7 +101,7 @@ public class ClientListCukes extends AdminSuite {
 	public static boolean search_by_another_client_name(WebDriver d) {
 		try {
 			Thread.sleep(1000);
-			currentClient = ClientListTab.getClientNameFromList(wd, 1).getText();
+			currentClient = ClientListTab.getClientNameFromList(d, 1).getText();
 			search_bar_is_blank(d);
 			Thread.sleep(1000);
 			ClientListTab.getClientSearchBox(d).sendKeys(currentClient);
@@ -137,7 +137,7 @@ public class ClientListCukes extends AdminSuite {
 	public static boolean click_client_in_client_list(WebDriver d) {
 		try {
 			Thread.sleep(1000);
-			currentClient = ClientListTab.getClientNameFromList(wd, 1).getText();
+			currentClient = ClientListTab.getClientNameFromList(d, 1).getText();
 			ClientListTab.getClientNameFromList(d, 1).click();
 			return true;
 		} catch (Throwable e) {

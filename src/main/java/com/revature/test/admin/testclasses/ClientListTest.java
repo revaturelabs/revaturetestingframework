@@ -15,14 +15,14 @@ public class ClientListTest extends AdminSuite {
 
 	static int testNumber = 1;
 	
-	//@BeforeTest
-	@Test(priority = 0)
+	@BeforeTest
 	// Clicks Client List Tab and checks the URL
 	public void NavigateToCreateUserTab() {
 		System.out.println("============ Initializing Client List Tests ===============");
 		System.out.println("");
 		
 		try {
+			Thread.sleep(5000);
 			assertTrue(ClientListCukes.click_client_list_tab(wd));
 			assertTrue(ClientListCukes.client_list_tab_loads(wd));
 			assertTrue(ClientListCukes.client_list_panel_loads(wd));

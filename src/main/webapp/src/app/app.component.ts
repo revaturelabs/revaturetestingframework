@@ -7,6 +7,6 @@ import { jsonObject } from './jsonObject';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  appTitle: String = 'AssignForce Test Automation Framework';
+  appTitle: String = 'TrackForce Test Automation Framework';
   //@Input() @Output() testData: jsonObject;
 }

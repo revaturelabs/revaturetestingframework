@@ -15,18 +15,21 @@ import org.openqa.selenium.Keys;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 //@CucumberOptions(features="src/test/resources/AdminFeatureFiles")
-public class AdminSuite{
-
-	public static WebDriver wd = WebDriverUtil.getChromeDriver(); 
+public class AdminSuite extends AbstractTestNGCucumberTests{
+	
+	public WebDriver wd = null;
 	private String baseURL = TestConfig.getBaseURL(); //gets the website URL
 	public static Alert alert = null; //creates object to interact with alerts in order to cancel pop ups
 	public static Actions action = null;
+	
 	@BeforeSuite
 	public void beforeSuite() {
+		wd = new WebDriverUtil().getChromeDriver();
 		System.out.println("================== TRACKFORCE TESTS ==================");
 		//wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Logging In");
 		try {
+			Thread.sleep(5000);
 			wd.get(baseURL);
 			LoginUtil.loginAsAdmin(wd);
 			alert = wd.switchTo().alert(); //initialize

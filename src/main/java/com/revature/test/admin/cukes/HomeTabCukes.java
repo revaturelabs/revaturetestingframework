@@ -15,10 +15,11 @@ import cucumber.api.java.en.When;
 
 public class HomeTabCukes extends AdminSuite {
 	
+
 	static WebElement e = null;
 
 	@Given("^I am on the Home Page$")
-	public static boolean i_am_on_the_Home_Page(WebDriver d) throws Throwable {
+	public static boolean i_am_on_the_Home_Page(WebDriver d)  {
 
 		try {
 			Thread.sleep(1500);
@@ -50,10 +51,10 @@ public class HomeTabCukes extends AdminSuite {
 	}
 	
 	@When("^I click on the telephone link$")
-	public static boolean i_click_on_the_telephone_link(WebDriver d) throws Throwable {
+	public static boolean i_click_on_the_telephone_link(WebDriver d)  {
 		try {
 			Thread.sleep(1000);
-			HomeTab.phone(wd).click();
+			HomeTab.phone(d).click();
 			
 			Thread.sleep(1000);
 			//Exits alert pop up asking to open in app
@@ -67,16 +68,16 @@ public class HomeTabCukes extends AdminSuite {
 	}
 
 	@Then("^I should see the telephone number link open on a browser$")
-	public void i_should_see_the_telephone_number_link_open_on_a_browser() throws Throwable {
+	public void i_should_see_the_telephone_number_link_open_on_a_browser()  {
 
 	}
 
 	@When("^I click on the email link$")
-	public static boolean i_click_on_the_email_link(WebDriver d) throws Throwable {
+	public static boolean i_click_on_the_email_link(WebDriver d)  {
 
 		try {
 			Thread.sleep(1000);
-			HomeTab.email(wd).click();
+			HomeTab.email(d).click();
 			return true;
 		} catch (Throwable e) {
 			System.out.println(("Failed click on the email link"));
@@ -86,16 +87,16 @@ public class HomeTabCukes extends AdminSuite {
 	}
 
 	@Then("^I should see the email link open on a browser$")
-	public void i_should_see_the_email_link_open_on_a_browser() throws Throwable {
+	public void i_should_see_the_email_link_open_on_a_browser()  {
 
 	}
 
 	@When("^I click on the website link$")
-	public static boolean i_click_on_the_website_link(WebDriver d) throws Throwable {
+	public static boolean i_click_on_the_website_link(WebDriver d)  {
 		
 		try {
 			Thread.sleep(1000);
-			HomeTab.website(wd).click();
+			HomeTab.website(d).click();
 			return true;
 		} catch (Throwable e) {
 			System.out.println(("Failed click on the website link"));
@@ -105,17 +106,17 @@ public class HomeTabCukes extends AdminSuite {
 	}
 
 	@Then("^I should see the Revature website link open on a browser$")
-	public void i_should_see_the_Revature_website_link_open_on_a_browser() throws Throwable {
+	public void i_should_see_the_Revature_website_link_open_on_a_browser()  {
 
 	}
 
 	
 	@When("^I click on the populate database button$")
-	public static boolean i_click_on_the_populate_database_button(WebDriver d) throws Throwable {
+	public static boolean i_click_on_the_populate_database_button(WebDriver d)  {
 		
 		try {
 			Thread.sleep(2000);
-			HomeTab.populateDatabase(wd).click();
+			HomeTab.populateDatabase(d).click();
 			return true;
 
 		} catch (Throwable e) {
@@ -126,16 +127,16 @@ public class HomeTabCukes extends AdminSuite {
 	}
 
 	@Then("^I should see a temporary blue border for the populate database button$")
-	public void i_should_see_a_temporary_blue_border_for_the_populate_database_button(WebDriver d) throws Throwable {
+	public void i_should_see_a_temporary_blue_border_for_the_populate_database_button(WebDriver d)  {
 	    
 		
 	}
 
 	@When("^I click on the populate static salesforce button$")
-	public static boolean i_click_on_the_populate_static_salesforce_button(WebDriver d) throws Throwable {
+	public static boolean i_click_on_the_populate_static_salesforce_button(WebDriver d)  {
 		try {
 			Thread.sleep(2000);
-			HomeTab.populateStaticSalesforce(wd).click();
+			HomeTab.populateStaticSalesforce(d).click();
 			return true;
 
 		} catch (Throwable e) {
@@ -145,16 +146,16 @@ public class HomeTabCukes extends AdminSuite {
 	}
 
 	@Then("^I should see a temporary blue border for the populate static salesforce button$")
-	public void i_should_see_a_temporary_blue_border_for_the_populate_static_salesforce_button(WebDriver d) throws Throwable {
+	public void i_should_see_a_temporary_blue_border_for_the_populate_static_salesforce_button(WebDriver d)  {
 	   
 	}
 
 	@When("^I click on the empty database button$")
-	public static boolean i_click_on_the_empty_database_button(WebDriver d) throws Throwable {
+	public static boolean i_click_on_the_empty_database_button(WebDriver d)  {
 		
 		try {
 			Thread.sleep(2000);
-			HomeTab.emptyDatabase(wd).click();
+			HomeTab.emptyDatabase(d).click();
 			return true;
 
 		} catch (Throwable e) {
@@ -165,7 +166,7 @@ public class HomeTabCukes extends AdminSuite {
 	}
 
 	@Then("^I should see a temporary blue border for the empty database button$")
-	public void i_should_see_a_temporary_blue_border_for_the_empty_database_button(WebDriver d) throws Throwable {
+	public void i_should_see_a_temporary_blue_border_for_the_empty_database_button(WebDriver d)  {
 	    
 	}
 

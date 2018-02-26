@@ -11,8 +11,7 @@ import com.revature.test.admin.pom.Login;
 
 public class LoginTest extends AdminSuite {
 
-	//@BeforeTest
-	@Test(priority = 0)
+	@BeforeTest
 	public void beforeTest() {
 		System.out.println("============ Initializing Login Tests ===============");
 		System.out.println("");

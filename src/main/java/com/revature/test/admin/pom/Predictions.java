@@ -39,11 +39,10 @@ public class Predictions {
 	public static WebElement filterbyTechnologies(WebDriver d) {
 		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-predictions/div/div/div[1]/form/div[4]/div/div/div"), 10);
 		return e;
-		//*[@id="checkboxes"]/div[2]/label/input
 	}
 	
 	public static WebElement technologyOption(WebDriver d) {
-		e= WaitToLoad.findDynamicElement(d,By.xpath("//*[@id=\"checkboxes\"]/div[3]/label/input"), 10);
+		e= WaitToLoad.findDynamicElement(d,By.xpath("//*[@id=\"tech3\"]"), 10);
 		return e;
 	}
 	
@@ -52,6 +51,24 @@ public class Predictions {
 		return e;
 	}
 	
+	public static WebElement technology(WebDriver d) {
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-predictions/div/div/div[2]/table/tbody/tr/td[1]"), 10);
+		return e;
+	}
 	
+	public static WebElement requestedAssociates(WebDriver d) {
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-predictions/div/div/div[2]/table/tbody/tr/td[2]"), 10);
+		return e;
+	}
+	
+	public static WebElement availableAssociates(WebDriver d) {
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-predictions/div/div/div[2]/table/tbody/tr/td[3]"), 10);
+		return e;
+	}
+	
+	public static WebElement difference(WebDriver d) {
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-predictions/div/div/div[2]/table/tbody/tr/td[4]"), 10);
+		return e;
+	}
 
 }

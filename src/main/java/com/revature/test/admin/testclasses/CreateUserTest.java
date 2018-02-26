@@ -26,8 +26,7 @@ public class CreateUserTest extends AdminSuite {
 	
 	private static int ID = 1;
 
-	//@BeforeTest
-	@Test(priority = 0)
+	@BeforeTest
 	public void RunningCreateUserTabTests() {
 		System.out.println("============ Initializing Create User Tests ===============");
 		System.out.println("");

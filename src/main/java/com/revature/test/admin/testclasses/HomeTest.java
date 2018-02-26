@@ -15,8 +15,7 @@ public class HomeTest extends AdminSuite {
 
 	static int testNumber = 1;
 	
-	//@BeforeTest
-	@Test(priority = 0)
+	@BeforeTest
 	// Clicks Home Tab
 	public void NavigateToHomeTab() {
 		System.out.println("============ Initializing Home Tests ===============");

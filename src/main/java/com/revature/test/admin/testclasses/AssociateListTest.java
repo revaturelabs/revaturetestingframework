@@ -20,8 +20,7 @@ public class AssociateListTest extends AdminSuite {
 	static int testNumber = 1;
 	
 	// Click associate tab on navbar
-	//@BeforeTest
-	@Test(priority = 0)
+	@BeforeTest
 	public void NavigateToAssociateListTab() {
 		System.out.println("============ Initializing Associate List Tests ===============");
 		System.out.println("");
