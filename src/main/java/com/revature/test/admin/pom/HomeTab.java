@@ -11,7 +11,7 @@ public class HomeTab {
 static WebElement e =null;
 	
 	public static WebElement clickHomeTab(WebDriver d) {
-		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-root/div/app-navbar/nav/div/ul[1]/li[2]/a"), 10);
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/div/app-root/app-janus/app-nav/nav/div[2]/div/app-track-force-nav/ul/li[1]/a"), 10);
 		return e;
 	}
 	
@@ -20,18 +20,18 @@ static WebElement e =null;
 	}
 	
 	public static WebElement phone(WebDriver d) {
-		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-root/div/app-footer/footer/div/div/div[2]/ul/li[2]/a"), 10);
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/footer/div/div/div[2]/a[1]"), 10);
 		return e;
 	}
 	
 	public static WebElement email(WebDriver d) {
-		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-root/div/app-footer/footer/div/div/div[3]/ul/li[1]/a"), 10);
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/footer/div/div/div[2]/a[2]"), 10);
 		
 		return e;
 	}
 	
 	public static WebElement website(WebDriver d) {
-		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/app/app-root/div/app-footer/footer/div/div/div[3]/ul/li[2]/a"), 10);
+		e= WaitToLoad.findDynamicElement(d,By.xpath("/html/body/footer/div/div/div[2]/a[3]"), 10);
 		return e;
 	}
 	
