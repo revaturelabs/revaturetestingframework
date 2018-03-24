@@ -39,8 +39,8 @@ public class AssociateListCukes {
 	public static boolean associate_list_tab_loads(WebDriver d) {
 		try {
 			Thread.sleep(500);
-			if (AssociateListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/associate-listing")
-					|| AssociateListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/associate-list")) {
+			if (AssociateListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/#/TrackForce/associate-listing")
+					|| AssociateListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/#/TrackForce/associate-list")) {
 				return true;
 			}
 			System.out.println("Current URL does not end with /associate-listing or /associate-list");
