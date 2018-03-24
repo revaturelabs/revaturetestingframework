@@ -36,7 +36,6 @@ public class AdminSuite extends AbstractTestNGCucumberTests{
 			wd.get(baseURL);
 			JanusUtil.clickTrackForce(wd);
 			Thread.sleep(5000);
-			//AssertJUnit.assertEquals(wd.getTitle(), Login.getTitle(wd));			
 			LoginUtil.loginAsAdmin(wd);
 			alert = wd.switchTo().alert(); //initialize
 			action = new Actions(wd);

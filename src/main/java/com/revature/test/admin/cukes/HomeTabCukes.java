@@ -38,8 +38,8 @@ public class HomeTabCukes extends AdminSuite {
 		try {
 			Thread.sleep(500);
 			if (HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL()) || 
-					HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/") || 
-					HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/root")) {
+					HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/#/TrackForce") || 
+					HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/#/TrackForce/home")) {
 				return true;
 			}
 			System.out.println("Current URL does not equal the base URL, or does not end with / or /root");
