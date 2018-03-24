@@ -12,7 +12,7 @@ public class Logout {
 	public static void logout(WebDriver d) {
 		try {
 			Thread.sleep(1000);
-			WaitToLoad.findDynamicElement(d, By.cssSelector("[href='/login']"), 10);
+			WaitToLoad.findDynamicElement(d, By.cssSelector("li.nav-item:nth-child(6) > a:nth-child(1)"), 10);
 			d.quit();
 		} catch (Throwable e) {
 			System.out.println("Failed to log out");
@@ -21,3 +21,4 @@ public class Logout {
 	}
 
 }
+
