@@ -8,6 +8,10 @@ public class LoginUtil {
 	private static String adminUsername = "TestAdmin";
 	private static String adminPassword = "TestAdmin";
 	
+	public static String checkTitle(WebDriver wd) {
+		return Login.getTitle(wd);
+	}
+	
 	public static void loginAsAdmin(WebDriver wd) {
 		try {
 			Login.getUsername(wd).sendKeys(adminUsername);
