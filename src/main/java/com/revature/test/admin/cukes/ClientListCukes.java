@@ -34,8 +34,8 @@ public class ClientListCukes extends AdminSuite {
 	public static boolean client_list_tab_loads(WebDriver d) {
 		try {
 			Thread.sleep(500);
-			if (ClientListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/client-listing") ||
-					ClientListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/client-list")) {
+			if (ClientListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/#/TrackForce/client-listing") ||
+					ClientListTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/#/TrackForce/client-list")) {
 				return true;
 			}
 			System.out.println("Current URL does not end with /client-listing or /client-list");
@@ -82,7 +82,7 @@ public class ClientListCukes extends AdminSuite {
 	public static boolean search_by_client_name(WebDriver d) {
 		try {
 			Thread.sleep(1000);
-			currentClient = secondClient;
+			currentClient = firstClient;
 			search_bar_is_blank(d);
 			ClientListTab.getClientSearchBox(d).sendKeys(currentClient);
 			Thread.sleep(1000);
@@ -158,7 +158,7 @@ public class ClientListCukes extends AdminSuite {
 			//This "else if" hardcodes the getBarChartHeader(d).getText() return value which is A1 KAISER, INC, 
 			//	since there is a weird problem with Selenium returning blank 
 			//	when you try to use getText() on the header
-			else if (("A1 KAISER, Inc").equals(currentClient)){
+			else if (("22nd Century Technologies").equals(currentClient)){
 				return true;
 			}
 			System.out.println("Graph is not displaying the selected client's data");

@@ -144,7 +144,7 @@ public class BatchListCukes {
 			BatchListTab.fromDateField(wd).sendKeys("15");
 			BatchListTab.fromDateField(wd).sendKeys("2017");
 			
-			Thread.sleep(5000);
+			//Thread.sleep(5000);
 			//System.out.println("\n \n \n \n \n" + BatchListTab.fromDateField(wd).getText());
 			/*if (!(BatchListTab.fromDateField(wd).getText().equals("09/15/2017"))) {
 				return false;
