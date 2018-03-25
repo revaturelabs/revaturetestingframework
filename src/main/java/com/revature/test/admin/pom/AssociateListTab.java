@@ -14,7 +14,7 @@ public class AssociateListTab {
 
 	// Associate List tab on navbar
 	public static WebElement getAssociateListTab(WebDriver d) {
-		return WaitToLoad.findDynamicElement(d, By.cssSelector("[href='/associate-listing']"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-nav/nav/div[2]/div/app-track-force-nav/ul/li[4]/a"), 10);
 	}
 
 	public static WebElement getAssociateListHeader(WebDriver d) {
@@ -85,7 +85,7 @@ public class AssociateListTab {
 	// ****************** MARKETINGSTATUS TEXT **************************
 	public static WebElement MarketingStatusText(WebDriver d) {
 
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/tbody/tr[3]/td[5]"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/tbody/tr[2]/td[5]"), 10);
 
 	}
 
