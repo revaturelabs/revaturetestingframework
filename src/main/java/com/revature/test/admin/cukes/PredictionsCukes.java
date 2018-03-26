@@ -41,7 +41,7 @@ public class PredictionsCukes extends AdminSuite {
 		try {
 			Thread.sleep(500);
 			if (HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL()) ||
-					HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/predictions")) {
+					HomeTab.getCurrentURL(d).equals(TestConfig.getBaseURL() + "/#/TrackForce/predictions")) {
 				return true;
 			}
 			System.out.println("Current URL does not equal the base URL, or does not end with /predictions");
@@ -57,7 +57,7 @@ public class PredictionsCukes extends AdminSuite {
 		
 		try {
 			Thread.sleep(1000);
-			Predictions.startDate(d).sendKeys("02/26/1999");
+			Predictions.startDate(d).sendKeys("02/26/2017");
 			return true;
 
 		} catch (Throwable e) {
@@ -72,7 +72,7 @@ public class PredictionsCukes extends AdminSuite {
 		
 		try {
 			Thread.sleep(1000);
-			Predictions.endDate(d).sendKeys("09/13/1999");
+			Predictions.endDate(d).sendKeys("09/13/2018");
 			return true;
 
 		} catch (Throwable e) {

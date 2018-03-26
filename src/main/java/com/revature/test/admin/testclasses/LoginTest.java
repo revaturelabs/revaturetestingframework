@@ -7,7 +7,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.revature.test.admin.pom.HomeTab;
 import com.revature.test.admin.pom.Login;
+import com.revature.test.utils.TestConfig;
 
 public class LoginTest extends AdminSuite {
 
@@ -20,9 +22,10 @@ public class LoginTest extends AdminSuite {
 	@Test(priority = 1)
 	public void IndexPage() {
 		try {
-			assertNotEquals(Login.getTitle(wd), "NGTrackForce");
+			assertNotEquals(Login.getCurrentURL(wd), TestConfig.getBaseURL() + "/#/TrackForce/login" );
+			
 		} catch (Throwable e) {
-			fail("Failed to Login. 'NGTrackForce' header still on page'");
+			fail("Failed to Login.");
 			e.printStackTrace();
 		}
 	}

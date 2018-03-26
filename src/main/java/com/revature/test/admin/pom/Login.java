@@ -23,4 +23,8 @@ public class Login {
 		return d.findElement(By.xpath("//title")).getText();
 	}
 	
+	public static String getCurrentURL(WebDriver d) {
+		return d.getCurrentUrl();
+	}
+	
 }
