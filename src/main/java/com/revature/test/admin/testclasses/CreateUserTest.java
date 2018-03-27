@@ -1,10 +1,11 @@
 package com.revature.test.admin.testclasses;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
-import org.openqa.selenium.Alert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -30,6 +31,29 @@ public class CreateUserTest extends AdminSuite {
 	public void RunningCreateUserTabTests() {
 		System.out.println("============ Initializing Create User Tests ===============");
 		System.out.println("");
+		
+		try {
+			assertTrue(CreateUserCukes.clickLogout(wd));
+			System.out.println("Assert 0");
+			Thread.sleep(3000);
+			assertTrue(CreateUserCukes.loadedJanusPage(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 1");
+			assertTrue(CreateUserCukes.clickTrackForce(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 2");
+			assertTrue(CreateUserCukes.clickCreateUserTab(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 3");
+			assertTrue(CreateUserCukes.loadedCreateUserTab(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 4");
+
+
+		} catch (Throwable e) {
+			fail("Error: Failed to navigate to Create User tab");
+			e.printStackTrace();
+		}
 	}
 
 	@BeforeMethod
@@ -38,20 +62,34 @@ public class CreateUserTest extends AdminSuite {
 		testNumber++;
 	}
 
-	// Clicks Create user Tab and checks the URL
+	/*// Clicks Create user Tab and checks the URL
 	// Does this for each method @Test because after you click
 	// Submit on the Create User Tab, it sends you back to Home
 	@BeforeMethod
 	public void NavigateToCreateUserTest() {
 		try {
+			assertTrue(CreateUserCukes.clickLogout(wd));
+			System.out.println("Assert 0");
+			Thread.sleep(3000);
+			assertTrue(CreateUserCukes.loadedJanusPage(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 1");
+			assertTrue(CreateUserCukes.clickTrackForce(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 2");
 			assertTrue(CreateUserCukes.clickCreateUserTab(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 3");
 			assertTrue(CreateUserCukes.loadedCreateUserTab(wd));
+			Thread.sleep(3000);
+			System.out.println("Assert 4");
+
 
 		} catch (Throwable e) {
 			fail("Error: Failed to navigate to Create User tab");
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	@Test(priority = 1)
 	// Fills in username, password, selects radio button, and submits
@@ -61,9 +99,18 @@ public class CreateUserTest extends AdminSuite {
 			ID++;
 			assertTrue(CreateUserCukes.inputPassword(wd, pass));
 			assertTrue(CreateUserCukes.inputPasswordConfirm(wd, pass));
+			System.out.println(CreateUserCukes.clickAdminRadio(wd) + "   1");
 			assertTrue(CreateUserCukes.clickAdminRadio(wd));
 			assertTrue(CreateUserCukes.submitForm(wd));
-			assertFalse(CreateUserCukes.cancelAlert(wd));
+			
+			WebDriverWait wait = new WebDriverWait(wd, 700);
+			if(wait.until(ExpectedConditions.alertIsPresent())!=null) {
+			System.out.println("---------------------------");
+			System.out.println(CreateUserCukes.cancelAlert(wd));
+			System.out.println("---------------------------");
+
+			CreateUserCukes.cancelAlert(wd);
+			}
 		} catch (Throwable e) {
 			fail("Error: Failed to create new Administrater");
 			e.printStackTrace();
@@ -78,9 +125,10 @@ public class CreateUserTest extends AdminSuite {
 			ID++;
 			assertTrue(CreateUserCukes.inputPassword(wd, pass));
 			assertTrue(CreateUserCukes.inputPasswordConfirm(wd, pass));
+			System.out.println(CreateUserCukes.clickManagerRadio(wd) + "   2");
 			assertTrue(CreateUserCukes.clickManagerRadio(wd));
 			assertTrue(CreateUserCukes.submitForm(wd));
-			assertFalse(CreateUserCukes.cancelAlert(wd));
+			CreateUserCukes.cancelAlert(wd);
 		} catch (Throwable e) {
 			fail("Error: Failed to create new Manager");
 			e.printStackTrace();
@@ -97,14 +145,14 @@ public class CreateUserTest extends AdminSuite {
 			assertTrue(CreateUserCukes.inputPasswordConfirm(wd, pass));
 			assertTrue(CreateUserCukes.clickVPRadio(wd));
 			assertTrue(CreateUserCukes.submitForm(wd));
-			assertFalse(CreateUserCukes.cancelAlert(wd));
+			CreateUserCukes.cancelAlert(wd);
 		} catch (Throwable e) {
 			fail("Error: Failed to create new Vice President");
 			e.printStackTrace();
 		}
 	}
 
-	@Test(priority = 4)
+	/*@Test(priority = 4, enabled = false)
 	// Fills in username, password, selects radio button, and submits
 	public void CreateAssociate() {
 		try {
@@ -155,12 +203,13 @@ public class CreateUserTest extends AdminSuite {
 			fail("Error: Failed to create new Associate");
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	@AfterTest
 	public void afterTest() {
 		System.out.println("============ Create User Tests finished ===============");
 		System.out.println("");
+		
 	}
 
 }
