@@ -18,12 +18,12 @@ public class BatchListTab {
 
 	public static WebElement clickBatchListTab(WebDriver wd) {
 
-		return WaitToLoad.findDynamicElement(wd, By.cssSelector("[href='/batch-listing']"), 10);
+		return WaitToLoad.findDynamicElement(wd, By.cssSelector("li.nav-item:nth-child(3) > a:nth-child(1)"), 10);
 	}
 
 	public static WebElement clickAssociateListTab(WebDriver wd) {
 
-		return WaitToLoad.findDynamicElement(wd, By.cssSelector("[href='/associate-listing']"), 10);
+		return WaitToLoad.findDynamicElement(wd, By.cssSelector("li.nav-item:nth-child(4) > a:nth-child(1)"), 10);
 	}
 
 	public static String getCurrentURL(WebDriver d) {
@@ -32,8 +32,8 @@ public class BatchListTab {
 
 	public static WebElement findAllBatchesHeader(WebDriver wd) {
 
-		return WaitToLoad.findDynamicElement(wd, By.xpath("/html/body/app/app-batch-list/div/div[2]/div[1]/h3"), 10);
-
+		return WaitToLoad.findDynamicElement(wd, By.xpath("/html/body/div/app-root/app-janus/app-batch-list/div/div/div[2]/div[1]/h3"), 10);
+		
 	}
 
 	public static List<WebElement> getBatchNames(WebDriver wd) {
@@ -48,28 +48,33 @@ public class BatchListTab {
 	public static WebElement getFirstBatchName(WebDriver wd) {
 
 		WebElement table_element = WaitToLoad.findDynamicElement(wd,
-				By.xpath("//table[@class='table table-striped table-hover table-bordered']"), 30);
+				By.cssSelector(".table"), 30);
+		// /html/body/div/app-root/app-janus/app-batch-list/div/div/div[2]/div[1]/table	
+		// .table .table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)
 		WebElement row = table_element
-				.findElement(By.xpath("/html/body/app/app-batch-list/div/div[2]/div[1]/table/tbody/tr[1]/td[1]/a"));
+				.findElement(By.cssSelector(".table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)"));
 		return row;
 	}
 
 	// Gets all rows under the first batch in Batch List Tab
 	public static List<WebElement> getAssociatesInfo(WebDriver wd) {
 		WebElement table_element = WaitToLoad.findDynamicElement(wd,
-				By.xpath("/html/body/app/app-batch-details/div/div/div[2]/table"), 30);
-
+				By.cssSelector(".table"), 30);
+		
 		List<WebElement> rows = table_element
-				.findElements(By.xpath("/html/body/app/app-batch-details/div/div/div[2]/table/tbody/tr"));
+				.findElements(By.xpath("/html/body/div/app-root/app-janus/app-batch-details/div/div/div[2]/table/tbody/tr"));
 		return rows;
 	}
 
+	
+	
+	
 	// Gets all Associate IDs under the first batch in Batch List Tab
 	public static List<WebElement> getAssociatesIDs(WebDriver wd) {
 		WebElement table_element = WaitToLoad.findDynamicElement(wd,
-				By.xpath("//table[@class='table table-striped table-hover table-bordered']"), 30);
+				By.cssSelector(".table"), 30);
 		List<WebElement> rows = table_element
-				.findElements(By.xpath("//table[@class='table table-striped table-hover table-bordered']/tbody/tr"));
+				.findElements(By.xpath("/html/body/div/app-root/app-janus/app-batch-details/div/div/div[2]/table/tbody/tr"));
 		List<WebElement> ID = new ArrayList<WebElement>();
 		for (WebElement e : rows) {
 			ID.addAll(e.findElements(By.xpath("td[1]")));
@@ -106,27 +111,28 @@ public class BatchListTab {
 	// Gets EVERY ROW from ASSOCIATE LIST TAB
 	public static List<WebElement> grabAssociatesBatchInfo(WebDriver wd) {
 		WebElement table_element = WaitToLoad.findDynamicElement(wd,
-				By.xpath("/html/body/app/app-associate-list/div/div[2]/div/table"), 30);
+				By.cssSelector(".table"), 30);
 		List<WebElement> rows = table_element
-				.findElements(By.xpath("/html/body/app/app-associate-list/div/div[2]/div/table/tbody/tr"));
+				.findElements(By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/tr"));
+		
 		return rows;
 	}
 
 	// finds the From date field using the id
 	public static WebElement fromDateField(WebDriver wd) {
-		return WaitToLoad.findDynamicElement(wd, By.xpath("//*[@id=\"startDate\"]"), 10);
+		return WaitToLoad.findDynamicElement(wd, By.id("startDate"), 10);
 	}
 
 	// finds the To date field using the id
 	public static WebElement toDateField(WebDriver wd) {
-		return WaitToLoad.findDynamicElement(wd, By.xpath("//*[@id=\"endDate\"]"), 10);
+		return WaitToLoad.findDynamicElement(wd, By.id("endDate"), 10);
 		
 	}
 
 	// finds the submit button using the xpath
 	public static WebElement submitButton(WebDriver wd) {
 		return WaitToLoad.findDynamicElement(wd,
-				By.xpath("/html/body/app/app-batch-list/div/div[2]/div[2]/form/div[3]/input[1]"), 10);
+				By.xpath("/html/body/div/app-root/app-janus/app-batch-list/div/div/div[2]/div[2]/form/div[3]/input"), 10);
 	}
 
 	// finds the reset button using the xpath
@@ -139,9 +145,9 @@ public class BatchListTab {
 	// List of WebElements
 	public static List<WebElement> getStartDates(WebDriver wd) {
 		WebElement table_element = WaitToLoad.findDynamicElement(wd,
-				By.xpath("/html/body/app/app-batch-list/div/div[2]/div[1]/table"), 30);
+				By.cssSelector(".table"), 30);
 		List<WebElement> rows = table_element
-				.findElements(By.xpath("/html/body/app/app-batch-list/div/div[2]/div[1]/table/tbody/tr"));
+				.findElements(By.xpath("/html/body/div/app-root/app-janus/app-batch-details/div/div/div[2]/table/tbody/tr"));
 		List<WebElement> columns = new ArrayList<WebElement>();
 
 		for (WebElement e : rows) {
@@ -154,9 +160,9 @@ public class BatchListTab {
 	// List of WebElements
 	public static List<WebElement> getEndDates(WebDriver wd) {
 		WebElement table_element = WaitToLoad.findDynamicElement(wd,
-				By.xpath("/html/body/app/app-batch-list/div/div[2]/div[1]/table"), 30);
+				By.cssSelector(".table"), 30);
 		List<WebElement> rows = table_element
-				.findElements(By.xpath("/html/body/app/app-batch-list/div/div[2]/div[1]/table/tbody/tr"));
+				.findElements(By.xpath("/html/body/div/app-root/app-janus/app-batch-details/div/div/div[2]/table/tbody/tr"));
 		List<WebElement> columns = new ArrayList<WebElement>();
 
 		for (WebElement e : rows) {
@@ -177,7 +183,7 @@ public class BatchListTab {
 		}
 		start.removeAll(Arrays.asList("", null));
 		
-		// populates "start" arrayList with data to be used in a comparison later in this method
+		// populates "end" arrayList with data to be used in a comparison later in this method
 		List<String> end = new ArrayList<String>();
 		for (WebElement col : Nto) {
 			end.add(col.getText());
