@@ -34,20 +34,15 @@ public class CreateUserTest extends AdminSuite {
 		
 		try {
 			assertTrue(CreateUserCukes.clickLogout(wd));
-			System.out.println("Assert 0");
 			Thread.sleep(3000);
 			assertTrue(CreateUserCukes.loadedJanusPage(wd));
 			Thread.sleep(3000);
-			System.out.println("Assert 1");
 			assertTrue(CreateUserCukes.clickTrackForce(wd));
 			Thread.sleep(3000);
-			System.out.println("Assert 2");
 			assertTrue(CreateUserCukes.clickCreateUserTab(wd));
 			Thread.sleep(3000);
-			System.out.println("Assert 3");
 			assertTrue(CreateUserCukes.loadedCreateUserTab(wd));
 			Thread.sleep(3000);
-			System.out.println("Assert 4");
 
 
 		} catch (Throwable e) {
@@ -99,18 +94,14 @@ public class CreateUserTest extends AdminSuite {
 			ID++;
 			assertTrue(CreateUserCukes.inputPassword(wd, pass));
 			assertTrue(CreateUserCukes.inputPasswordConfirm(wd, pass));
-			System.out.println(CreateUserCukes.clickAdminRadio(wd) + "   1");
 			assertTrue(CreateUserCukes.clickAdminRadio(wd));
 			assertTrue(CreateUserCukes.submitForm(wd));
 			
 			WebDriverWait wait = new WebDriverWait(wd, 700);
-			if(wait.until(ExpectedConditions.alertIsPresent())!=null) {
-			System.out.println("---------------------------");
-			System.out.println(CreateUserCukes.cancelAlert(wd));
-			System.out.println("---------------------------");
-
-			CreateUserCukes.cancelAlert(wd);
-			}
+			
+			if(wait.until(ExpectedConditions.alertIsPresent())!=null)
+				CreateUserCukes.cancelAlert(wd);
+			
 		} catch (Throwable e) {
 			fail("Error: Failed to create new Administrater");
 			e.printStackTrace();
@@ -125,7 +116,6 @@ public class CreateUserTest extends AdminSuite {
 			ID++;
 			assertTrue(CreateUserCukes.inputPassword(wd, pass));
 			assertTrue(CreateUserCukes.inputPasswordConfirm(wd, pass));
-			System.out.println(CreateUserCukes.clickManagerRadio(wd) + "   2");
 			assertTrue(CreateUserCukes.clickManagerRadio(wd));
 			assertTrue(CreateUserCukes.submitForm(wd));
 			CreateUserCukes.cancelAlert(wd);
