@@ -32,7 +32,7 @@ public class AdminSuite extends AbstractTestNGCucumberTests{
 		//wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Logging In");
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(500);
 			wd.get(baseURL);
 			JanusUtil.clickTrackForce(wd);
 			Thread.sleep(5000);
