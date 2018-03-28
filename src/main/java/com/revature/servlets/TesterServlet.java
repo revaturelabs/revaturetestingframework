@@ -48,7 +48,7 @@ public class TesterServlet extends HttpServlet {
 			classes.add(new XmlClass("com.revature.test.admin.testclasses.BatchListTest"));
 			classes.add(new XmlClass("com.revature.test.admin.testclasses.AssociateListTest"));
 			classes.add(new XmlClass("com.revature.test.admin.testclasses.CreateUserTest"));
-			//classes.add(new XmlClass("com.revature.test.admin.testclasses.LoginTest"));
+			classes.add(new XmlClass("com.revature.test.admin.testclasses.AssociateInfoTest"));
 			break;
 		case "1":
 			System.out.println("Adding class 1");
@@ -74,6 +74,10 @@ public class TesterServlet extends HttpServlet {
 			System.out.println("Adding class 6");
 			classes.add(new XmlClass("com.revature.test.admin.testclasses.CreateUserTest"));
 			break;
+		case "7":
+			System.out.println("Adding class 6");
+			classes.add(new XmlClass("com.revature.test.admin.testclasses.AssociateInfoTest"));
+			break;
 		default:
 			System.out.println("There is no test for this Switch Statement:" + which);
 			break;
@@ -87,16 +91,7 @@ public class TesterServlet extends HttpServlet {
 	    TestNG testng = new TestNG();
 	    // create list of suites to run
 	    List<XmlSuite> suites = new ArrayList<XmlSuite>();
-	    if (whichToRun.equals("all")) {
-	    	suites.add(createSuite("1"));
-	    	suites.add(createSuite("2"));
-	    	suites.add(createSuite("3"));
-	    	suites.add(createSuite("4"));
-	    	suites.add(createSuite("5"));
-	    	suites.add(createSuite("6"));
-	    }else {
-	    	suites.add(createSuite(whichToRun));
-	    }
+	    suites.add(createSuite(whichToRun));
 	    // add suites to testNG
 	    testng.setXmlSuites(suites);
 	    // create and add test listener which will generate response object
