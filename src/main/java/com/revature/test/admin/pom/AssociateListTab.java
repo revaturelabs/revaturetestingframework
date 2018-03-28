@@ -14,7 +14,7 @@ public class AssociateListTab {
 
 	// Associate List tab on navbar
 	public static WebElement getAssociateListTab(WebDriver d) {
-		return WaitToLoad.findDynamicElement(d, By.cssSelector("[href='/associate-listing']"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-nav/nav/div[2]/div/app-track-force-nav/ul/li[4]/a"), 10);
 	}
 
 	public static WebElement getAssociateListHeader(WebDriver d) {
@@ -85,43 +85,43 @@ public class AssociateListTab {
 	// ****************** MARKETINGSTATUS TEXT **************************
 	public static WebElement MarketingStatusText(WebDriver d) {
 
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/tbody/tr[3]/td[5]"), 10);
-
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/tr[2]/td[5]"), 10);
+		
 	}
 
 	// ****************SORT COMPONENTS ******************************
 
 	public static WebElement sortByAssociateId(WebDriver d) {
 
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/thead/tr/th[2]"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/thead/tr/th[2]"), 10);
 
 	}
 
 	public static WebElement sortByFirstName(WebDriver d) {
 
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/thead/tr/th[3]"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/thead/tr/th[3]"), 10);
 
 	}
 
 	public static WebElement sortByLastName(WebDriver d) {
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/thead/tr/th[4]"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/thead/tr/th[4]"), 10);
 
 	}
 
 	public static WebElement sortByMarketingStatus(WebDriver d) {
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/thead/tr/th[5]"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/thead/tr/th[5]"), 10);
 
 	}
 
 	public static WebElement sortByClient(WebDriver d) {
 
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/thead/tr/th[6]"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/thead/tr/th[6]"), 10);
 
 	}
 
 	public static WebElement sortByBatch(WebDriver d) {
 
-		return WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/thead/tr/th[7]"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/thead/tr/th[7]"), 10);
 
 	}
 
@@ -133,9 +133,9 @@ public class AssociateListTab {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		List<WebElement> list = d.findElements(By.xpath("//*[@id=\"info\"]/table/tbody/*/td[2]/a"));
-
-		System.out.println("Retrieved associat id into list");
+		List<WebElement> list = d.findElements(By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/*/td[2]/a"));
+		
+		System.out.println("Retrieved associate id into list");
 
 		return list;
 	}
@@ -148,8 +148,8 @@ public class AssociateListTab {
 			e.printStackTrace();
 		}
 
-		List<WebElement> list = d.findElements(By.xpath(" //*[@id=\"info\"]/table/tbody/*/td[3]"));
-
+		List<WebElement> list = d.findElements(By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/*/td[3]"));
+		
 		System.out.println("Retrieved associate first name into list");
 
 		return list;
@@ -163,7 +163,7 @@ public class AssociateListTab {
 			e.printStackTrace();
 		}
 
-		List<WebElement> list = d.findElements(By.xpath("//*[@id=\"info\"]/table/tbody/*/td[4]"));
+		List<WebElement> list = d.findElements(By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/*/td[4]"));
 
 		System.out.println("Retrieved associate last name into list");
 
@@ -178,7 +178,7 @@ public class AssociateListTab {
 			e.printStackTrace();
 		}
 
-		List<WebElement> list = d.findElements(By.xpath("//*[@id=\"info\"]/table/tbody/*/td[5]"));
+		List<WebElement> list = d.findElements(By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/*/td[5]"));
 
 		System.out.println("Retrieved associate marketing into list");
 
@@ -193,7 +193,7 @@ public class AssociateListTab {
 			e.printStackTrace();
 		}
 
-		List<WebElement> list = d.findElements(By.xpath("//*[@id=\"info\"]/table/tbody/*/td[6]"));
+		List<WebElement> list = d.findElements(By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/*/td[6]"));
 
 		System.out.println("Retrieved client name into list");
 
@@ -208,7 +208,7 @@ public class AssociateListTab {
 			e.printStackTrace();
 		}
 
-		List<WebElement> list = d.findElements(By.xpath("//*[@id=\"info\"]/table/tbody/*/td[7]"));
+		List<WebElement> list = d.findElements(By.xpath("/html/body/div/app-root/app-janus/app-associate-list/div/div[2]/div/table/tbody/*/td[7]"));
 
 		System.out.println("Retrieved batch name into list");
 
