@@ -91,7 +91,7 @@ public class TesterServlet extends HttpServlet {
 	    TestNG testng = new TestNG();
 	    // create list of suites to run
 	    List<XmlSuite> suites = new ArrayList<XmlSuite>();
-		suites.add(createSuite(whichToRun));
+		
 		if (whichToRun.equals("all")) {
 			          suites.add(createSuite("1"));
 			            suites.add(createSuite("2"));
