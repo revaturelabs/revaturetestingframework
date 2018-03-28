@@ -3,6 +3,8 @@ package com.revature.test.admin.cukes;
 import org.openqa.selenium.WebDriver;
 
 import com.revature.test.admin.pom.AssociateInfoTab;
+import com.revature.test.utils.TestConfig;
+
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -63,7 +65,8 @@ public class AssociateInfoCukes {
 		try {
 			
 			System.out.println("The associate Info page is: " +d.getCurrentUrl() );
-			return d.getCurrentUrl().equals("http://52.70.53.136:8086/angular/#/TrackForce/form-comp/"+AssociateInfoTab.index);
+			return d.getCurrentUrl().equals(TestConfig.getBaseURL()+"#/TrackForce/form-comp/" + AssociateInfoTab.index);
+			
 		    }catch (Throwable e){
 		        System.out.println("Failed to click on associate Id");    	
 		        
@@ -75,7 +78,7 @@ public class AssociateInfoCukes {
 
 	@Given("^Now I am in the associate info page$")
 	public static boolean now_i_am_in_the_associate_info_page(WebDriver d) {
-		return d.getCurrentUrl().contains("http://52.70.53.136:8086/angular/#/TrackForce/form-comp/");   
+		return d.getCurrentUrl().contains(TestConfig.getBaseURL()+"#/TrackForce/form-comp/");   
 	    
 	}
 
