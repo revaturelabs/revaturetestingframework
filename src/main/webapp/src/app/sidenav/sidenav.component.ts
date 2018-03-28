@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class SidenavComponent implements OnInit {
   allTests: testObject[];
 
-  groups: string[] = ["1","2","3","4","5","6"];
+  groups: string[] = ["1","2","3","4","5","6","7"];
 
   constructor(public ts: TestService) {
   }
