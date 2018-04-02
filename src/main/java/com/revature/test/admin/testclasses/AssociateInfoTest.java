@@ -38,7 +38,9 @@ public class AssociateInfoTest extends AdminSuite{
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * assert the fields of the associate in the associate list page with associate info page
+	 */
 	@Test(priority=2)
 	public void assertAssociateInfo() {
 		assertEquals(AssociateInfoTab.associate.getFirstName(), AssociateInfoTab.getAssociateFirstName(wd).getText());

@@ -8,9 +8,9 @@ import com.revature.test.utils.Associate;
 import com.revature.test.utils.WaitToLoad;
 
 public class AssociateInfoTab {
-	private static WebElement e=null;
-	public static Associate associate=new Associate();
-	public static int index=770;	
+	private static WebElement e=null; 
+	public static Associate associate=new Associate();//an associate object 
+	public static int index=770;	//Specify the associateId num to select from the associate list 
 	//Navigate to the associate info page
 	/**
 	 * find the associate id from associate list page
@@ -21,13 +21,12 @@ public static WebElement getAssociateListTab(WebDriver d) {
 		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-nav/nav/div[2]/div/app-track-force-nav/ul/li[4]/a"), 10);
 	}
 	public static WebElement getAssociateInList(WebDriver d) {
-		//sort element in id order
-		//e=WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/thead/tr/th[2]"), 10);
-		//e.click();
-		//type search key
+		//Element must be sorted in the ascending order(Which is by default enabled) 
+	    //find the associateId in the list by typing in the research by id
 		e=WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"name\"]"), 10);
 		e.sendKeys(""+index);
-		
+		//Since the list is ordered by default the id should be at the top.
+		//Populate the assocaite object with the fields from the table associate table list.
 		e=WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/tbody/tr[1]/td[3]"), 10);
 		associate.setFirstName(e.getText());
 		e=WaitToLoad.findDynamicElement(d, By.xpath("//*[@id=\"info\"]/table/tbody/tr[1]/td[4]"), 10);
