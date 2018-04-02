@@ -82,6 +82,9 @@ public class TesterServlet extends HttpServlet {
 		return suite;
 	}
 	
+	/* 
+	 * this fixed the run all test issue by detecting 'all' and creating multiple test suites for all tests to run
+	*/
 	public static ResponseObject runTests(String whichToRun) {
 		// testNG instance
 	    TestNG testng = new TestNG();
