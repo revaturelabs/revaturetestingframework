@@ -40,7 +40,7 @@ public class TesterServlet extends HttpServlet {
 		System.out.println("creating suite for: "+which);
 		switch(which) {
 		case "all":
-			//doesnt work unless there's only 1 test in there
+			//run all test works now, just need to add the new test group to the list down in the If statement
 			System.out.println("adding all classes");
 			classes.add(new XmlClass("com.revature.test.admin.testclasses.AdminSuite"));
 			//classes.add(new XmlClass("com.revature.test.admin.testclasses.HomeTest"));
