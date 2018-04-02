@@ -55,6 +55,10 @@ public class AssociateListTest extends AdminSuite {
 
 	// ************************ SORT ***************************************
 
+	/*
+	 * Tests are ignored because they take a long time to load, also some test may need path integrations
+	 */
+	
 	// Sort by associate id in ascending order
 	@Test(priority = 2, enabled = false)
 	public void sortByAssociateIdInAscendingOrder() {

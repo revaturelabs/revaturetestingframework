@@ -58,34 +58,6 @@ public class CreateUserTest extends AdminSuite {
 		testNumber++;
 	}
 
-	/*// Clicks Create user Tab and checks the URL
-	// Does this for each method @Test because after you click
-	// Submit on the Create User Tab, it sends you back to Home
-	@BeforeMethod
-	public void NavigateToCreateUserTest() {
-		try {
-			assertTrue(CreateUserCukes.clickLogout(wd));
-			System.out.println("Assert 0");
-			Thread.sleep(3000);
-			assertTrue(CreateUserCukes.loadedJanusPage(wd));
-			Thread.sleep(3000);
-			System.out.println("Assert 1");
-			assertTrue(CreateUserCukes.clickTrackForce(wd));
-			Thread.sleep(3000);
-			System.out.println("Assert 2");
-			assertTrue(CreateUserCukes.clickCreateUserTab(wd));
-			Thread.sleep(3000);
-			System.out.println("Assert 3");
-			assertTrue(CreateUserCukes.loadedCreateUserTab(wd));
-			Thread.sleep(3000);
-			System.out.println("Assert 4");
-
-
-		} catch (Throwable e) {
-			fail("Error: Failed to navigate to Create User tab");
-			e.printStackTrace();
-		}
-	}*/
 
 	@Test(priority = 1)
 	// Fills in username, password, selects radio button, and submits
@@ -142,6 +114,11 @@ public class CreateUserTest extends AdminSuite {
 			e.printStackTrace();
 		}
 	}
+	
+	/*
+	 * These tests are commented out because TrackForce no longer create Associate
+	 * 
+	 */
 
 	/*@Test(priority = 4, enabled = false)
 	// Fills in username, password, selects radio button, and submits
