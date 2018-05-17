@@ -11,9 +11,9 @@ public class ClientListTab {
 
 	public static WebElement getClientTab(WebDriver d) {
 
-		e = WaitToLoad.findDynamicElement(d, By.cssSelector("[href='/client-listing']"), 10);
+		e = WaitToLoad.findDynamicElement(d, By.id("clientListNav"), 10);
 		if (e == null) {
-			e = WaitToLoad.findDynamicElement(d, By.cssSelector("[href='/client-list']"), 10);
+			e = WaitToLoad.findDynamicElement(d, By.id("clientListNav"), 10);
 		}
 		return e;
 	}
@@ -25,7 +25,7 @@ public class ClientListTab {
 
 	// finds the Client Tab header using the xpath
 	public static WebElement getClientTabHeader(WebDriver d) {
-		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/app/div/app-client-list/div/div/div[1]/h3"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-client-list/div/div[2]/div[1]/h3"), 10);
 	}
 
 	// finds the client search box using the xpath
@@ -35,7 +35,7 @@ public class ClientListTab {
 
 	// finds the view data for all clients button using the xpath
 	public static WebElement getViewDataForAllClientsButton(WebDriver d) {
-		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/app/app-client-list/div/div/div[1]/button"),
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-client-list/div/div[2]/div[1]/button"),
 				10);
 	}
 
@@ -46,7 +46,7 @@ public class ClientListTab {
 
 	// finds the bar chart header using the xpath
 	public static WebElement getBarChartHeader(WebDriver d) {
-		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/app/app-client-list/div/div/div[2]/h1"), 10);
+		return WaitToLoad.findDynamicElement(d, By.xpath("/html/body/div/app-root/app-janus/app-client-list/div/div[2]/div[2]/h1"), 10);
 	}
 
 	// finds the client search bar using the id

@@ -115,11 +115,13 @@ public class BatchListTest extends AdminSuite {
 				.the_batch_list_should_update_to_show_only_the_batches_which_fit_the_entered_criteria(wd));
 	}
 
-	@Test(priority = 9)
+	/*
+	 @Test(priority = 9)
 	// Clicks the reset button
 	public void ClickReset() throws Throwable {
 		assertTrue(BatchListCukes.the_reset_button_is_clicked(wd));
 	}
+	*/
 
 	@Test(priority = 10)
 	// Checks if the batch list is correct after resetting the To and From fields to

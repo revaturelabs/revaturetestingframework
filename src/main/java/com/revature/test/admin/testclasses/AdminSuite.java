@@ -1,15 +1,18 @@
 package com.revature.test.admin.testclasses;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import com.revature.test.utils.WebDriverUtil;
+
+import com.revature.test.admin.pom.Login;
 import com.revature.test.admin.pom.Logout;
+import com.revature.test.utils.JanusUtil;
 import com.revature.test.utils.LoginUtil;
 import com.revature.test.utils.TestConfig;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
+import com.revature.test.utils.WebDriverUtil;
 
 //import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
@@ -29,8 +32,10 @@ public class AdminSuite extends AbstractTestNGCucumberTests{
 		//wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Logging In");
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(500);
 			wd.get(baseURL);
+			JanusUtil.clickTrackForce(wd);
+			Thread.sleep(5000);
 			LoginUtil.loginAsAdmin(wd);
 			alert = wd.switchTo().alert(); //initialize
 			action = new Actions(wd);
@@ -42,8 +47,9 @@ public class AdminSuite extends AbstractTestNGCucumberTests{
 	@AfterSuite
 	public void afterSuite() {
 		System.out.println("Logging out");
-		Logout.logout(wd);
-		//wd.quit();
-
+		if (Logout.logout(wd) != null) {
+		Logout.logout(wd).click();
+		wd.quit();
+		}
 	}
 }
